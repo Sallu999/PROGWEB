@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 2</title>
+</head>
+
+<body>
+    <form>
+        <table width="450px" style="border:1px solid black;">
+            <tr>
+                <th colspan="3"
+                    style="background-color:lightgray; border: 1px solid black; padding:10px; font-size: 20px;">Edit
+                    Profile</th>
+            </tr>
+
+            <tr>
+                <td width="350px" height="120px" rowspan="6" align="center" style="border:1px solid black; padding: 5px">
+                    <img src="foto.jpeg" alt="Profile Picture" width="100"><br>
+                    <button type="button">Upload</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="320px" height="150px" align="center" style="border:1px solid black; padding: 5px">
+                        <tr>
+                            <td>Name</td>
+                            <td>Tim Berners-Lee</td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td>
+                                <select name="position">
+                                    <option value="" hidden selected></option>
+                                    <optgroup label="Programmer">
+                                        <option value="senior_programmer">senior programmer</option>
+                                        <option value="junior_programmer">junior programmer</option>
+                                    </optgroup>
+                                    <optgroup label="System Analyst">
+                                        <option value="senior_analyst">senior analyst</option>
+                                        <option value="junior_analyst">junior analyst</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                                <input type="password" name="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Confirm Password</td>
+                            <td>
+                                <input type="password" name="confirm_password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align:right">
+                                <button type="reset">Reset</button>
+                                <button type="submit">Update</button>
+                            </td>
+                        </tr>
+                    </table>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
