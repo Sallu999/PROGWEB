@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 1</title>
+</head>
+<style>
+    #bintang {
+        width: 300px;
+        height: 300px;
+
+
+    }
+
+    a {
+        display: inline-block;
+        position: relative;
+    }
+
+    a::before,
+    a::after,
+    a span::before,
+    a span::after {
+        content: "";
+        border: 3px solid #FF0000;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+    }
+
+    a::before {
+        left: 0px;
+        top: 0px;
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    a::after {
+        right: 0px;
+        top: 0px;
+        border-left: 0;
+        border-bottom: 0;
+    }
+
+    a span::before {
+        left: 0px;
+        bottom: 0px;
+        border-right: 0;
+        border-top: 0;
+    }
+
+    a span::after {
+        right: 0px;
+        bottom: 0px;
+        border-left: 0;
+        border-top: 0;
+    }
+
+    table {
+        border: 10px;
+        width: 400px;
+        height: 400px;
+    }
+
+    a:hover::before,
+    a:hover::after,
+    a:hover span::before,
+    a:hover span::after {
+        border-color: #FF00FF;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <a><img id="bintang" src="star.jpg"></img><span></span></a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

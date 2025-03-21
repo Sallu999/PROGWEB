@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 5</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li.satu, li.news {
+            float: left;
+        }
+
+        a {
+            width: 120px;
+            color: black;
+            border-style: dotted;
+            border-color: grey;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 4px;
+            font-weight: bold;
+            display: block;
+        }
+
+        a:hover {
+            color: white;
+            background-color: black;
+        }
+
+        li.news:hover ul {
+            display: block;
+        }
+
+        li.news ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="satu"><a href="#home">Home</a></li>
+        <li class="news"><a href="#news">News</a>
+            <ul class="news">
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#movie">Movie</a></li>
+            </ul>
+        </li>
+        <li class="satu"><a href="#contact">Contact</a></li>
+        <li class="satu"><a href="#about">About</a></li>
+    </ul>
+</body>
+
+</html>

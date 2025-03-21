@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 2</title>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            height: 150px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        .redcirclefull {
+            left: 20px;
+            z-index: 2;
+        }
+
+        .purplecircle {
+            left: 80px;
+            z-index: 2;
+        }
+
+        .redcirclehalf {
+            left: 140px;
+            z-index: 1;
+            background: url("circle-red.png");
+        }
+
+        .redcirclehalf1 {
+            left: 20px;
+            z-index: 3;
+        }
+
+        .redcirclehalf2 {
+            left: 140px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle redcirclefull"><img src="circle-red.png" alt="Red Circle 1"></div>
+        <div class="circle redcirclehalf1"><img src="circle-red-half.png" alt="Red Circle 2"></div>
+        <div class="circle purplecircle"><img src="circle-purple.png" alt="Purple Circle"></div>
+        <div class="circle redcirclehalf"><img src="circle-red-half.png" alt="Red Circle 2"></div>
+        <div class="circle redcirclehalf2"><img src="circle-red-half.png" alt="Red Circle 2"></div>
+    </div>
+</body>
+
+</html>
