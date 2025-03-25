@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 3</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 800px;
+            height: 600px;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid white;
+        }
+
+        #empty {
+            background-color: transparent;
+        }
+
+        #filled {
+            background-color: orange;
+        }
+
+
+    </style>
+
+    <script>
+        function prosespiramida() {
+            var tinggi = document.getElementById("tinggi").value;
+            var tableHTML = "";
+            
+            for (var x = 1; x <= tinggi; x++) {
+                tableHTML += "<tr>";
+
+                for (var y = 0; y < tinggi - x; y++) {
+                    tableHTML += '<td id="empty"></td>';
+                }
+
+                for (var y = 0; y < (2 * x - 1); y++) {
+                    tableHTML += '<td id="filled"></td>';
+                }
+                tableHTML += "</tr>";
+            }
+            document.getElementById("piramida").innerHTML = tableHTML;
+        }
+    </script>
+</head>
+
+<body>
+    <label for="tinggipiramida"> Tinggi Piramida: </label>
+    <input type="number" id="tinggi" min="1"><br>
+    <button onclick="prosespiramida()">Proses</button>
+
+    <br>
+    <table id="piramida"></table>
+
+</body>
+</html>

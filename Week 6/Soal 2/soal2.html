@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 2</title>
+    <style>
+        table {
+            border: 1.5px solid black;
+            padding: 2px;
+            width: 100px;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: separate;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function tabel() {
+            var angka;
+            do {
+                angka = prompt("A Number?");
+                if (angka === null) return;
+            }while (isNaN(angka) || angka.trim() === "");
+           
+            var tabelangka = "<table>";
+            for (var x = 1; x <= angka; x++) {
+                tabelangka += "<tr>";
+                tabelangka += "<td>"+x+"</td>";
+                tabelangka += "<td>x</td>";
+                tabelangka += "<td>"+angka+"</td>";
+                tabelangka += "<td>=</td>";
+                tabelangka += "<td>"+x*angka+"</td>";
+                tabelangka += "</tr>";
+            }
+            tabelangka += "</table>";
+
+            document.getElementById("hasiltabel").innerHTML = tabelangka;
+        }
+    </script>
+</head>
+
+<body onload="tabel()">
+    <div id="hasiltabel"></div>
+</body>
+
+</html>

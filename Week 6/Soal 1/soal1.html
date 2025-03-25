@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 1</title>
+
+    <style>
+        .container {
+            width: 300px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 150px;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        td {
+            border: 1.5px solid black;
+            text-align: center;
+            font-size: 15px;
+            padding: 8px;
+            min-width: 30px;
+            height: 30px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        function hitung() {
+            var angkapertama = document.getElementById("angkapertama").value;
+            var angkakedua = document.getElementById("angkakedua").value;
+
+            var ang1 = parseInt(angkapertama);
+            var ang2 = parseInt(angkakedua);
+
+            document.getElementById("ang1").innerHTML = ang1;
+            document.getElementById("ang2").innerHTML = ang2;
+            document.getElementById("hsltambah").innerHTML = ang1 + ang2;
+
+            document.getElementById("ang3").innerHTML = ang1;
+            document.getElementById("ang4").innerHTML = ang2;
+            document.getElementById("hslkurang").innerHTML = ang1 - ang2;
+
+            if ((isNaN(angkapertama) || angkapertama.trim() === "") &&
+                (isNaN(angkakedua) || angkakedua.trim() === "")) {
+                alert("Angka pertama dan kedua harus angka.");
+                return;
+            }
+            if (isNaN(angkapertama) || angkapertama.trim() === "") {
+                alert("Angka pertama bukan angka.");
+                return;
+            }
+            if (isNaN(angkakedua) || angkakedua.trim() === "") {
+                alert("Angka kedua harus angka.");
+                return;
+            } 
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label> Angka Pertama: &nbsp;<input type="text" id="angkapertama" size="5"></label><br>
+        <label> Angka Kedua: &nbsp; &nbsp;&nbsp;<input type="text" id="angkakedua" size="5"></label><br>
+        <button onclick="hitung()">Count</button><br>
+
+        <table>
+            <tr>
+                <td id="ang1"></td>
+                <td>+</td>
+                <td id="ang2"></td>
+                <td>=</td>
+                <td id="hsltambah"></td>
+            </tr>
+            <tr>
+                <td id="ang3"></td>
+                <td>-</td>
+                <td id="ang4"></td>
+                <td>=</td>
+                <td id="hslkurang"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

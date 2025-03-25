@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373013-Sallu_Soal 4</title>
+    <style>
+        table {
+            border: 1px solid black;
+            padding: 2px;
+            width: 300px;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: separate;
+            padding: 5px;
+        }
+
+        #text1 {
+            color: blue;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        #pilihan {
+            text-align: center;
+        }
+
+
+        button {
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+            margin-left: 70px;
+            margin-right: -60px;
+        }
+
+        #button1 {
+            border-color: aqua;
+        }
+    </style>
+
+    <script>
+        function processform() {
+            var inputangka = document.getElementById("input").value;
+            var conversionType = document.getElementById("conversionType").value;
+            var outputakhir = "";
+
+            if (conversionType === "decimalbinary") {
+                var decimal = parseInt(inputangka);
+                if (isNaN(decimal) || decimal < 0 || decimal > 255) {
+                    alert("Masukkan angka 0 hingga 255.");
+                    return;
+                }
+                outputakhir = manualDecimalBinary(decimal);
+            } else if (conversionType === "binarydecimal") {
+                if (inputangka.length > 8) {
+                    alert("Masukkan angka biner dengan tepat 8 digit.");
+                    return;
+                }
+
+                for (var x = 0; x < inputangka.length; x++) {
+                    if (inputangka[x] !== '0' && inputangka[x] !== '1') {
+                        alert("Masukkan hanya angka 0 atau 1.");
+                        return;
+                    }
+                }
+
+                outputakhir = manualBinaryDecimal(inputangka);
+            }
+
+            document.getElementById("output").value = outputakhir;
+        }
+
+        function manualDecimalBinary(decimal) {
+            var binary = "";
+            do {
+                if (decimal / 2 === Math.floor(decimal / 2)) {
+                    binary = "0" + binary;
+                } else {
+                    binary = "1" + binary;
+                }
+                decimal = Math.floor(decimal / 2);
+            } while (decimal > 0);
+            return binary;
+        }
+        function manualBinaryDecimal(binary) {
+            var decimal = 0;
+            for (var x = 0; x < binary.length; x++) {
+                decimal = decimal * 2 + parseInt(binary[x]);
+            }
+            return decimal;
+        }
+
+        function resetform() {
+            document.getElementById("input").value = "";
+            document.getElementById("output").value = "";
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td id="text1"><label>Input: </label></td>
+                <td><input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td id="text1"><label>Output:</label></td>
+                <td><input type="text" id="output"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="pilihan">
+                    <select id="conversionType">
+                        <option value="decimalbinary">decimal-biner</option>
+                        <option value="binarydecimal">biner-decimal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="processform()" id="button1">PROSES</button>
+                    <button type="button" onclick="resetform()" id="button2">RESET</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
