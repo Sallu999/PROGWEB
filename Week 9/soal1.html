@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 1</title>
+
+    <style>
+        .input-judul {
+            width: 200px;
+            height: 25px;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            box-sizing: border-box;
+            resize: none;
+            margin-bottom: -5px;
+            overflow-y: scroll;
+        }
+
+        .hitung-huruf {
+            width: 60px;
+            height: 25px;
+            text-align: right;
+            box-sizing: border-box;
+            margin-top: -10px;
+        }
+    </style>
+
+    <script>
+        function call_onKeyPress(ob) {
+            var obval = ob.value;
+
+            if (obval.length > 256) {
+                obval = obval.substr(0, 256);
+                ob.value = obval;
+            }
+
+            document.getElementById("txt2").value = obval.length + "/256";
+        }
+    </script>
+
+</head>
+
+<body>
+    <table>
+        <tr class="input-text">
+            <td>Judul:</td>
+            <td><input type="text" id="judul" class="input-judul"></td>
+        </tr>
+        <tr>
+            <td>Deskripsi:</td>
+            <td><textarea id="txt1" onkeyup="call_onKeyPress(this)" onkeydown="call_onKeyPress(this)" maxlength="256"
+                    rows="5" cols="21"></textarea></td>
+        </tr>
+        <tr style="text-align: right;">
+            <td></td>
+            <td><input type="text" id="txt2" value="0/256" class="hitung-huruf"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
