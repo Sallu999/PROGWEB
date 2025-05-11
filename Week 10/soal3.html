@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 3</title>
+
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        button {
+            float: left;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("div").click(function () {
+                $(this).addClass("red");
+                $(this).attr("id", "stop");
+            });
+
+            $("button").click(function () {
+                $("div").each(function (index, domEle) {
+                    if ($(domEle).attr("id") == "stop") {
+                        return false;
+                    }
+                    $(domEle).addClass("yellow");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="change">Change colors</button><br><br>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

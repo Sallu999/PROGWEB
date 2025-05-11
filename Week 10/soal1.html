@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 1</title>
+
+    <style>
+        #menu > li {
+            background-color: #fc49ab;
+            color: #ffffff;
+            width: 145px;
+            list-style: none;
+            margin-bottom: 5px;
+            position: relative;
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        #menu ol {
+            display: none;
+            position: absolute;
+            border: 3px solid #fc49ab;
+            width: 100px;
+        }
+
+        #menu ol li {
+            color: #000000;
+            list-style: none;
+            text-decoration: underline;
+            margin-left: -40px;
+            
+        }
+
+        #menu ol li:hover {
+            background-color: white;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#menu ol").hide();
+            $("#menu > li").hover(function () {
+                $("#menu ol").hide();
+                $(this).children("ol").show();
+            }, function () {
+                $(this).children("ol").hide();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <ol id="menu">
+            <li>jQuery
+                <ol>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Blog</li>
+                </ol>
+            </li>
+            <li>Community
+                <ol>
+                    <li>Mailing List</li>
+                    <li>Tutorials</li>
+                    <li>Demos</li>
+                    <li>Plugins</li>
+                </ol>
+            </li>
+            <li>Development
+                <ol>
+                    <li>Source Code</li>
+                    <li>Bug Tracking</li>
+                    <li>Recent Changes</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

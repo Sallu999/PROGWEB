@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 2</title>
+
+    <style>
+        .highlight {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#add").click(function () {
+                var inputAdd = $("#name").val();
+                if (inputAdd != "") {
+                    $("<div>" + inputAdd + "</div>").appendTo("#list");
+                    $("#name").val("");
+                }
+            });
+
+            $("#search").click(function () {
+                var search = $("#name").val().toLowerCase();
+                $("#list div").each(function () {
+                    var cri = $(this).text().toLowerCase();
+                    if (search && cri.includes(search) && search != "") {
+                        $(this).addClass("highlight");
+                    } else {
+                        $(this).removeClass("highlight");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="name">
+        <button id="add">Add</button>
+        <button id="search">Search</button>
+    </div>
+
+    <div id="list">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+</body>
+
+</html>

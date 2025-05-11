@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 5</title>
+    <style>
+        div{
+            padding-top: 2px;
+        }
+
+        .highlight {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#search").on("input", function(){
+                var keyword = $(this).val();
+
+                $(".company").each(function() {
+                    var searchcompany = $(this).text().toLowerCase();
+                    if (searchcompany.includes(keyword) && keyword != "") {
+                        $(this).addClass("highlight");
+                    } else {
+                        $(this).removeClass("highlight");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="search">
+    <div>
+        <div class="company">Sun Microsystem</div>
+        <div class="company">Apache Software Foundation</div>
+        <div class="company">International Business Machines</div>
+        <div class="company">Microsoft Coorporation</div>
+        <div class="company">Apple Inc</div>
+        <div class="company">Sap Ag</div>
+        <div class="company">Accenture</div>
+        <div class="company">Computer Sciences Coorporation</div>
+        <div class="company">Google</div>
+        <div class="company">Softbank</div>
+        <div class="company">Yahoo</div>
+    </div>
+</body>
+</html>
