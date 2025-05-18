@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 2</title>
+
+    <style>
+        table {
+            border: 1px solid black;
+            width: 650px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        td {
+            border: 1px solid black;
+            border-collapse: separate;
+        }
+
+        .judul {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#look").click(function () {
+                $.getJSON("SIJson.txt", function (jsonData) {
+                    let html = `
+                        <table>
+                        <tr>
+                            <td class="judul">
+                                <h2><a href="${jsonData.link}" target="_blank">${jsonData.title}</a></h2>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                    `;
+
+                    $.each(jsonData.items, function (index, data) {
+                        html += `
+                                <p><a href="${data.link}" target="_blank">${data.title}</a></p>
+                                <div>By: ${data.author} / <i>${data.published}</i></div><br/>
+                                <div>${data.description}<br/><br/></div>
+                                <div>Universitas : <a href="${data.universitas.m}" target="_blank">Click Here</a></div>
+                                <div>Tag(s) : ${data.tags}</div><br/>
+                        `;
+                    });
+                    html += `
+                            </td>
+                        </tr>
+                        </table>
+                        <tr>
+                            <td>
+                                <div class="footer">©${jsonData.generator}</div>
+                            </td>
+                        </tr>
+                    `;
+                    $("#tabel").html(html);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <table id="tabel">
+        <tr>
+            <td>Title</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+        </tr>
+        <tr>
+            <td>Generator</td>
+        </tr>
+    </table>
+
+    <div><button id="look">Look</button></div>
+</body>
+
+</html>

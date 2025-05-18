@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 1</title>
+
+    <style>
+        .pilih {
+            border: 1px solid black;
+            width: 250px;
+            height: 70px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #isi {
+            border: 1px solid black;
+            background-color: black;
+        }
+
+        th {
+            color: white;
+        }
+
+        #isi tbody tr:nth-child(odd) {
+            background-color: #CCFFAA;
+        }
+
+        #isi tbody tr:nth-child(even) {
+            background-color: #FFFFCC;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#search').click(function () {
+                let select = $(":radio[name='kelas']:checked").val();
+                let file = "";
+
+                if (select === "kelasA") {
+                    file = "nilaiA.json";
+                } else if (select === "kelasB") {
+                    file = "nilaiB.json";
+                } else {
+                    file = "nilai.json";
+                }
+
+                $.getJSON(file, function (data) {
+                    let rows;
+                    $.each(data.nilai, function (index, mhs) {
+                        rows += `
+                    <tr>
+                        <td>${mhs.nrp}</td>
+                        <td>${mhs.nama}</td>
+                        <td>${mhs.nilaiakhir}</td>
+                        <td>${mhs.kelas}</td>
+                    </tr>
+                    `;
+                    });
+                    $('#body').html(rows);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Selamat! Berikut adalah Daftar Mahasiswa yang mendapat
+        Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024
+    </h3>
+    <table class="pilih">
+        <tr>
+            <td><input type="radio" name="kelas" value="all">All</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="kelas" value="kelasA">Kelas A</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="kelas" value="kelasB">Kelas B</td>
+        </tr>
+        <tr>
+            <td><button id="search">Search</button></td>
+        </tr>
+    </table>
+
+    <table id="isi">
+        <thead>
+            <tr>
+                <th>NRP</th>
+                <th>Nama</th>
+                <th>Nilai Akhir</th>
+                <th>Kelas</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+    </table>
+</body>
+
+</html>
