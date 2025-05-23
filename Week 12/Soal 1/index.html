@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373013-Sallu_Soal 1</title>
+
+    <style>
+        table {
+            width: 450px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        function resetForm() {
+            document.getElementById("addprofile").reset();
+            document.getElementById("position").value = "Senior Programmer";
+        }
+
+    </script>
+</head>
+
+<body>
+    <form method="POST" action="process.php" id="addprofile">
+        <table>
+            <tr>
+                <th colspan="3">Add Profile</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td>
+                    <select name="position" id="position">
+                        <optgroup label="Programmer">
+                            <option value="Senior Programmer">Senior Programmer</option>
+                            <option value="Junior Programmer">Junior Programmer</option>
+                        </optgroup>
+                        <optgroup label="System Analyst">
+                            <option value="Senior Analyst">Senior Analyst</option>
+                            <option value="Junior Analyst">Junior Analyst</option>
+                        </optgroup>
+                    </select>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td>
+                    <input type="password" name="confirm_password">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:right">
+                    <button type="reset" id="reset">Reset</button>
+                    <button type="submit" id="save">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p class="error" id="errormsg"></p>
+</body>
+
+</html>
